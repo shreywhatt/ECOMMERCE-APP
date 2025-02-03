@@ -15,11 +15,23 @@ class _HomepageState extends State<Homepage> {
 
   // this method will update our selected index
   // when the user taps on the bottom bar
-  void navigatedBottomBar (int index) {
+  void navigateBottomBar (int index) {
     setState(() {
       selectedIndex = index;
     });
   }
+
+  //pages to display
+  final List<Widget> pages = [
+
+    //shop page
+    const ShopPage(),
+
+    //cart page
+    const CartPage(),
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +39,7 @@ class _HomepageState extends State<Homepage> {
       bottomNavigationBar: MyBottomNavBar(),
 
 
-      onTabChange: (index) => navigatedBottomBar(index),
+      onTabChange: (index) => navigateBottomBar(index),
     );
   }
 }

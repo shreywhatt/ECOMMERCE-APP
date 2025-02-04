@@ -1,5 +1,7 @@
 import 'package:ecomm/components/bottom_nav_bar.dart';
+import 'package:ecomm/pages/shop_page.dart';
 import 'package:flutter/material.dart';
+import 'cart_page.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -36,10 +38,13 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      bottomNavigationBar: MyBottomNavBar(),
+      bottomNavigationBar: MyBottomNavBar(
+        onTabChange: (index) => navigateBottomBar(index),
+      ),
 
-
-      onTabChange: (index) => navigateBottomBar(index),
+      body: pages[
+        selectedIndex
+      ],
     );
   }
 }

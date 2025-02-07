@@ -42,6 +42,14 @@ class _HomepageState extends State<Homepage> {
         onTabChange: (index) => navigateBottomBar(index),
       ),
 
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
+      ),
+
       body: pages[
         selectedIndex
       ],

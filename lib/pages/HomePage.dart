@@ -44,11 +44,20 @@ class _HomepageState extends State<Homepage> {
 
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {},
+        elevation: 0,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: Icon(Icons.menu,
+                  color: Colors.black),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          }
         ),
       ),
+      drawer: Drawer(),
 
       body: pages[
         selectedIndex

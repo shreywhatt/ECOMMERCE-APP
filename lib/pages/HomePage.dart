@@ -46,15 +46,15 @@ class _HomepageState extends State<Homepage> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: Builder(
-          builder: (context) {
-            return IconButton(
-              icon: Icon(Icons.menu,
-                  color: Colors.black),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          }
+            builder: (context) {
+              return IconButton(
+                icon: Icon(Icons.menu,
+                    color: Colors.black),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            }
         ),
       ),
       drawer: Drawer(
@@ -64,15 +64,47 @@ class _HomepageState extends State<Homepage> {
             // logo
             DrawerHeader(child: Image.asset('lib/images/5.png', color: Colors.white,),
             ),
-            Divider(color: Colors.
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Divider(color: Colors.grey.shade800,
+              ),
+            ),
+            // other pages
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: ListTile(leading: Icon(
+                Icons.home,
+                color: Colors.white,),
+                title: Text('Home',
+                  style: TextStyle(color: Colors.white),),
+              ),
+            ),
 
-            //other pages
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: ListTile(leading: Icon(
+                Icons.info,
+                color: Colors.white,),
+                title: Text('About',
+                  style: TextStyle(color: Colors.white),),
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: ListTile(leading: Icon(
+                Icons.logout,
+                color: Colors.white,),
+                title: Text('Log Out',
+                  style: TextStyle(color: Colors.white),),
+              ),
+            )
           ],
         ),
       ),
 
       body: pages[
-        selectedIndex
+      selectedIndex
       ],
     );
   }

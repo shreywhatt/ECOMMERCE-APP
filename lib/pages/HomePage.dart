@@ -57,7 +57,19 @@ class _HomepageState extends State<Homepage> {
           }
         ),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.black,
+        child: Column(
+          children: [
+            // logo
+            DrawerHeader(child: Image.asset('lib/images/5.png', color: Colors.white,),
+            ),
+            Divider(color: Colors.
+
+            //other pages
+          ],
+        ),
+      ),
 
       body: pages[
         selectedIndex

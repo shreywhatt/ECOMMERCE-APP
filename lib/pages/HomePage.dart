@@ -11,28 +11,18 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  // this selected index is to control the bottom nav bar
-
   int selectedIndex = 0;
 
-  // this method will update our selected index
-  // when the user taps on the bottom bar
-  void navigateBottomBar (int index) {
+  void navigateBottomBar(int index) {
     setState(() {
       selectedIndex = index;
     });
   }
 
-  //pages to display
   final List<Widget> pages = [
-
-    //shop page
     const ShopPage(),
-
-    //cart page
     const CartPage(),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,71 +31,57 @@ class _HomepageState extends State<Homepage> {
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
-
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         leading: Builder(
-            builder: (context) {
-              return IconButton(
-                icon: Icon(Icons.menu,
-                    color: Colors.black),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            }
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu, color: Colors.black),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
         ),
       ),
       drawer: Drawer(
         backgroundColor: Colors.black,
         child: Column(
           children: [
-            // logo
-            DrawerHeader(child: Image.asset('lib/images/5.png', color: Colors.white,),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Divider(color: Colors.grey.shade800,
+            Container(
+              height: 150,
+              color: Colors.black,
+              child: Center(
+                child: Image.asset('lib/images/5.png'),
               ),
             ),
-            // other pages
+            const SizedBox(height: 10),
             const Padding(
               padding: EdgeInsets.only(left: 8.0),
-              child: ListTile(leading: Icon(
-                Icons.home,
-                color: Colors.white,),
-                title: Text('Home',
-                  style: TextStyle(color: Colors.white),),
+              child: ListTile(
+                leading: Icon(Icons.home, color: Colors.white),
+                title: Text('Home', style: TextStyle(color: Colors.white)),
               ),
             ),
-
             const Padding(
               padding: EdgeInsets.only(left: 8.0),
-              child: ListTile(leading: Icon(
-                Icons.info,
-                color: Colors.white,),
-                title: Text('About',
-                  style: TextStyle(color: Colors.white),),
+              child: ListTile(
+                leading: Icon(Icons.info, color: Colors.white),
+                title: Text('About', style: TextStyle(color: Colors.white)),
               ),
             ),
-
             const Padding(
               padding: EdgeInsets.only(left: 8.0),
-              child: ListTile(leading: Icon(
-                Icons.logout,
-                color: Colors.white,),
-                title: Text('Log Out',
-                  style: TextStyle(color: Colors.white),),
+              child: ListTile(
+                leading: Icon(Icons.logout, color: Colors.white),
+                title: Text('Log Out', style: TextStyle(color: Colors.white)),
               ),
-            )
+            ),
           ],
         ),
       ),
-
-      body: pages[
-      selectedIndex
-      ],
+      body: pages[selectedIndex],
     );
   }
 }

@@ -36,11 +36,14 @@ class _HomepageState extends State<Homepage> {
         elevation: 0,
         leading: Builder(
           builder: (context) {
-            return IconButton(
-              icon: const Icon(Icons.menu, color: Colors.black),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                icon: const Icon(Icons.menu, color: Colors.black),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              ),
             );
           },
         ),
@@ -72,7 +75,7 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 8.0),
+              padding: EdgeInsets.only(left: 8.0, top: 550.0),
               child: ListTile(
                 leading: Icon(Icons.logout, color: Colors.white),
                 title: Text('Log Out', style: TextStyle(color: Colors.white)),

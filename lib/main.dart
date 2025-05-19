@@ -1,5 +1,8 @@
 import 'package:ecomm/pages/introPage.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'models/cart.dart';
 
 void main() {
   runApp(const ecomApp());
@@ -10,10 +13,12 @@ class ecomApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: introPage()
-    );
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: introPage(),
+      ),);
   }
 }
 

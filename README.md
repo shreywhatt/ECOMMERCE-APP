@@ -9,19 +9,11 @@ A simple and user-friendly To-Do application built using Flutter and Android Stu
 ✔️ Delete tasks
 ✔️ Simple and clean UI
 
-📷 Screenshots
-
-![5-portrait](https://github.com/user-attachments/assets/f6905cdf-f29d-44b2-8f41-2e37431c03f1)
-
-
 🛠️ Technologies Used
 
 Flutter (Dart)
 
 Android Studio
-
-
-
 
 🚀 Installation
 

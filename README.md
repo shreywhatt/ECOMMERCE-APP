@@ -8,11 +8,11 @@ A simple and user-friendly To-Do application built using Flutter and Android Stu
 ✔️ Mark tasks as completed
 ✔️ Delete tasks
 ✔️ Simple and clean UI
-✔️ Persistent storage using SQLite / SharedPreferences
 
 📷 Screenshots
 
-(Add relevant screenshots here)
+![5-portrait](https://github.com/user-attachments/assets/f6905cdf-f29d-44b2-8f41-2e37431c03f1)
+
 
 🛠️ Technologies Used
 
@@ -20,9 +20,7 @@ Flutter (Dart)
 
 Android Studio
 
-Provider / Riverpod (for state management)
 
-SQLite / SharedPreferences (for local storage)
 
 
 🚀 Installation
@@ -61,9 +59,3 @@ flutter run
  ┣ 📂 test  
  ┣ pubspec.yaml  
  ┗ README.md
-
-📌 Future Enhancements
-
-🔹 Implement Firebase for cloud storage
-🔹
-
